@@ -15,8 +15,7 @@ import * as semver from "semver";
 const octokit = core.getInput("typst-token")
   ? github.getOctokit(core.getInput("typst-token"))
   : github.getOctokit(undefined!, {
-      authStrategy: createUnauthenticatedAuth,
-      auth: { reason: "no 'typst-token' input" },
+      authStrategy: () => createUnauthenticatedAuth({ reason: "no 'typst-token' input" }),
     });
 
 const repoSet = {
