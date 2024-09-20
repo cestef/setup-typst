@@ -16,6 +16,9 @@ const octokit = core.getInput("typst-token")
   ? github.getOctokit(core.getInput("typst-token"))
   : github.getOctokit(undefined!, {
       authStrategy: () => createUnauthenticatedAuth({ reason: "no 'typst-token' input" }),
+      auth: {
+        reason: "no 'typst-token' input",
+      }
     });
 
 const repoSet = {

@@ -89614,6 +89614,9 @@ const octokit = _actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("typst-token
     ? _actions_github__WEBPACK_IMPORTED_MODULE_3__.getOctokit(_actions_core__WEBPACK_IMPORTED_MODULE_1__.getInput("typst-token"))
     : _actions_github__WEBPACK_IMPORTED_MODULE_3__.getOctokit(undefined, {
         authStrategy: () => (0,_octokit_auth_unauthenticated__WEBPACK_IMPORTED_MODULE_11__.createUnauthenticatedAuth)({ reason: "no 'typst-token' input" }),
+        auth: {
+            reason: "no 'typst-token' input",
+        }
     });
 const repoSet = {
     owner: "typst",
